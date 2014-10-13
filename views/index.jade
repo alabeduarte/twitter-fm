@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  script(type='text/javascript', src="/socket.io/socket.io.js")
+  script(type='text/javascript', src="jsx/twitter.js")
+  div#content
+
+  script.
+    var socket = io();
+    document.getElementById('content').innerHTML = '> waiting for tweets...';
+
+    socket.on('tweet', function (data) {
+      console.log('tweet received: ', data.text);
+      document.getElementById('content').innerHTML = data.text;
+    });
