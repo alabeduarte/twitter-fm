@@ -1,0 +1,21 @@
+{
+  "name": "twitter-fm",
+  "version": "0.0.0",
+  "description": "Twitter FM",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nf start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "radio",
+    "twitter",
+    "fm"
+  ],
+  "author": "Alabê Duarte",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.9.7",
+    "foreman": "~1.0.0"
+  }
+}
