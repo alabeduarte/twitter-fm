@@ -1,7 +1,6 @@
 var app = angular.module('twitter-fm');
 
 app.controller('TwitterListCtlr', ['$scope', 'io', function ($scope, io) {
-  // var socket = io();
   var socket = io.connect(window.location.origin);
   $scope.test = '> waiting for tweets...';
 
