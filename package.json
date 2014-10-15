@@ -32,6 +32,7 @@
     "grunt-mocha-test": "^0.12.1",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.9",
+    "karma-mocha-reporter": "^0.3.1",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^1.21.5",

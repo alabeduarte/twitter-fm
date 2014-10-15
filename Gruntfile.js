@@ -5,15 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     mochaTest: {
       test: {
-        options: {
-          reporter: 'spec',
-        },
         src: ['tests/server/**/*Spec.js'],
-      }
-    },
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js'
       }
     },
     karma: {
@@ -30,7 +22,8 @@ module.exports = function(grunt) {
             'tests/client/**/*Spec.js'
           ],
           browsers: ['PhantomJS'],
-          colors: true
+          colors: true,
+          reporters: ['mocha'],
         }
       }
     },
