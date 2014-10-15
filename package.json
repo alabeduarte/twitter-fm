@@ -4,28 +4,36 @@
   "description": "Twitter FM",
   "main": "index.js",
   "scripts": {
-    "prepublish": "./node_modules/.bin/bower install && ./node_modules/.bin/jsx public/javascripts/ public/jsx",
+    "prepublish": "./node_modules/.bin/bower install",
     "start": "./node_modules/.bin/nf start",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/grunt"
   },
+  "dependencies": {
+    "bower": "~1.3.12",
+    "express": "~4.9.7",
+    "foreman": "~1.0.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "jade": "~1.7.0",
+    "socket.io": "~1.1.0",
+    "twit": "~1.1.18"
+  },
+  "author": "Alabê Duarte",
+  "license": "ISC",
+  "readme": "README.md",
   "keywords": [
     "radio",
     "twitter",
     "fm"
   ],
-  "author": "Alabê Duarte",
-  "license": "ISC",
-  "readme": "README.md",
-  "dependencies": {
-    "express": "~4.9.7",
-    "foreman": "~1.0.0",
-    "twit": "~1.1.18",
-    "socket.io": "~1.1.0",
-    "jade": "~1.7.0",
-    "bower": "~1.3.12",
-    "react-tools": "~0.11.2"
-  },
   "devDependencies": {
-    "jest-cli": "^0.1.18"
+    "chai": "^1.9.2",
+    "grunt-karma": "^0.9.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.9",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-tasks": "^0.6.0",
+    "mocha": "^1.21.5",
+    "zeparser": "0.0.7"
   }
 }
