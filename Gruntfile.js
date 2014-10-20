@@ -12,12 +12,13 @@ module.exports = function(grunt) {
       unit: {
         options: {
           singleRun: true,
-          frameworks: ['mocha', 'chai'],
+          frameworks: ['mocha', 'chai', 'sinon-chai'],
           files: [
             'public/js/vendor/angular/angular.js',
             'public/js/vendor/angular-mocks/angular-mocks.js',
             'public/js/app/app.js',
             'public/js/app/twitterListCtrl.js',
+            'public/js/app/audioPlayer.js',
             'tests/client/testHelper.js',
             'tests/client/**/*Spec.js'
           ],
