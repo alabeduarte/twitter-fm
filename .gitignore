@@ -4,4 +4,4 @@ public/vendor
 public/jsx/
 npm-debug.log
 .DS_Store
-webroot/
+webroot/files/*.mp3
