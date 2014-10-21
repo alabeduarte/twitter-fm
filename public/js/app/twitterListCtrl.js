@@ -7,7 +7,7 @@ app.controller('TwitterListCtlr', ['$scope', 'io', 'audioPlayer', function ($sco
   socket.on('tweet', function (data) {
     $scope.$apply(function () {
       $scope.text = data.text;
-      audioPlayer.open('http://localhost:5000/speech?q=' + data.text);
+      audioPlayer.open(window.location.origin + '/speech?q=' + data.text);
     });
   });
 }]);

@@ -80,7 +80,7 @@ describe('TwitterListCtlr', function() {
     }));
 
     it("should open tweet's speech mp3", function() {
-      expect(spy).to.have.been.calledWith('http://localhost:5000/speech?q=Hello World');
+      expect(spy).to.have.been.calledWith(window.location.origin + '/speech?q=Hello World');
     });
   });
 
