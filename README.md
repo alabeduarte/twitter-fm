@@ -1,17 +1,16 @@
-Twitter-FM
-=======
+#Twitter-FM
 
-Speeches tweets like a radio.
+[![Build Status](https://snap-ci.com/alabeduarte/twitter-fm/branch/master/build_image)](https://snap-ci.com/alabeduarte/twitter-fm/branch/master)
 
-Livedemo: http://twitter-fm.herokuapp.com
+Speeches tweets like a radio, see => http://twitter-fm.herokuapp.com
 
-* Running
+##Running it
 
 ```
   npm start
 ```
 
-* Running Tests
+##Unit tests
 
 ```
   npm test
