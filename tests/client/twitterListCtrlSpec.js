@@ -14,7 +14,12 @@ describe('TwitterListCtlr', function() {
             }
           }
         },
-        audioPlayer: { open: function (url) {} }
+        audioPlayer: {
+          download: function (url, callback) {
+            callback();
+          },
+          open: function (url) {}
+        }
       });
     }));
 
@@ -36,7 +41,12 @@ describe('TwitterListCtlr', function() {
             }
           }
         },
-        audioPlayer: { open: function (url) {} }
+        audioPlayer: {
+          download: function (url, callback) {
+            callback();
+          },
+          open: function (url) {}
+        }
       });
     }));
 
@@ -46,11 +56,13 @@ describe('TwitterListCtlr', function() {
   });
 
   describe("when some tweet arrived from server", function() {
-    var spy = sinon.spy(function (url) {});
+    var open = function (url) {};
+    var spy = sinon.spy(open);
 
     beforeEach(angular.mock.inject(function ($rootScope, $controller) {
-      var audioPlayer = {};
-      audioPlayer.open = spy;
+      var audioPlayer = {
+        open: spy
+      };
 
       scope = $rootScope.$new();
 
@@ -59,7 +71,7 @@ describe('TwitterListCtlr', function() {
         io: {
           connect: function (url) {
             return {
-              on: function (key, callback) { callback({ text: 'hello' }); }
+              on: function (key, callback) { callback({ text: 'Hello World' }); }
             }
           }
         },
@@ -67,8 +79,8 @@ describe('TwitterListCtlr', function() {
       });
     }));
 
-    it("should play tweet's speech", function() {
-      expect(spy).to.have.been.calledWith('http://localhost:5000/files/1413771049790.mp3');
+    it("should open tweet's speech mp3", function() {
+      expect(spy).to.have.been.calledWith('http://localhost:5000/speech?q=Hello World');
     });
   });
 

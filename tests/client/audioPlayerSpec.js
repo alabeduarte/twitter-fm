@@ -37,10 +37,10 @@ describe('AudioPlayer', function () {
     });
 
     describe('on load request', function () {
-      it("should play audio with data response and buffer source", function () {
-        var play = function (data, source) {};
-        var spy = sinon.spy(play);
-        audioPlayer.play = spy;
+      it("should decode audio with data response and buffer source", function () {
+        var decode = function (data, source) {};
+        var spy = sinon.spy(decode);
+        audioPlayer.decode = spy;
 
         audioPlayer.open('http://twitter-fm.mp3');
         request.onload();
@@ -63,7 +63,7 @@ describe('AudioPlayer', function () {
     });
   });
 
-  describe('#play', function () {
+  describe('#decode', function () {
     var audioPlayer;
 
     var context = {
@@ -83,7 +83,7 @@ describe('AudioPlayer', function () {
     });
 
     it("should set source buffer", function() {
-      audioPlayer.play(data, source);
+      audioPlayer.decode(data, source);
 
       expect(source.buffer).not.to.be.null;
     });
@@ -94,7 +94,7 @@ describe('AudioPlayer', function () {
       source.connect = spy;
       context.destination = 'somewhere';
 
-      audioPlayer.play(data, source);
+      audioPlayer.decode(data, source);
 
       expect(spy).to.have.been.calledWith('somewhere');
     });
@@ -105,7 +105,7 @@ describe('AudioPlayer', function () {
       source.start = spy;
       context.currentTime = 123;
 
-      audioPlayer.play(data, source);
+      audioPlayer.decode(data, source);
 
       expect(spy).to.have.been.calledWith(123);
     });
