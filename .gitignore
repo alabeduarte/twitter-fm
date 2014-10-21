@@ -5,3 +5,4 @@ public/jsx/
 npm-debug.log
 .DS_Store
 webroot/files/*.mp3
+public/js/vendor
