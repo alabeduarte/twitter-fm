@@ -4,3 +4,4 @@ block content
   script(type='text/javascript', src="/socket.io/socket.io.js")
   div(ng-app='twitter-fm' ng-controller='TwitterListCtlr')
     span(ng-bind='text')
+    iframe(id="spokenWord" ng:src="{{spokenWordUri}}" rel="noreferrer")

@@ -11,8 +11,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
 app.get('/tweets', routes.tweets);
-app.get('/speech', routes.speech);
-app.get('/files/:file', routes.deliverFile);
 
 var server = app.listen(app.get('port'), function () {
     console.log('Listening on port %d', server.address().port);

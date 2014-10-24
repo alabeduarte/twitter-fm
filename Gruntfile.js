@@ -18,7 +18,6 @@ module.exports = function(grunt) {
             'public/js/vendor/angular-mocks/angular-mocks.js',
             'public/js/app/app.js',
             'public/js/app/twitterListCtrl.js',
-            'public/js/app/audioPlayer.js',
             'tests/client/testHelper.js',
             'tests/client/**/*Spec.js'
           ],

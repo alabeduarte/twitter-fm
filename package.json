@@ -1,6 +1,6 @@
 {
   "name": "twitter-fm",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Twitter FM",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "foreman": "~1.0.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
+    "http-proxy": "^1.5.3",
     "jade": "~1.7.0",
     "paperboy": "0.0.5",
     "request": "^2.45.0",
