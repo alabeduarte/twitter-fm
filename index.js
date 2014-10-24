@@ -17,13 +17,10 @@ var server = app.listen(app.get('port'), function () {
 });
 
 var io = require('socket.io').listen(server);
-io.sockets.on('connection', function (socket) {
-  console.log('> connected');
 
-  twitter.onTweet(function (tweet) {
-    var data = { text: tweet.text };
-    console.log(">", data.text);
+twitter.onTweet(function (tweet) {
+  var data = { text: tweet.text };
+  console.log(">", data.text);
 
-    socket.emit('tweet', data);
-  });
+  io.sockets.emit('tweet', data);
 });
