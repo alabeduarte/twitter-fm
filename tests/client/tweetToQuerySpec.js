@@ -12,8 +12,20 @@ describe('TweetToQuery', function () {
   });
 
   describe("when tweet has hashtag", function () {
-    it("should return without hashtag", function () {
+    it("should return without hashtag with simple string", function () {
       expect(tweetToQuery.encode('Hello #fail World')).to.equal('Hello%20%20World');
+    });
+
+    it("should return without hashtag with underscoe", function () {
+      expect(tweetToQuery.encode('Hello #fail_with_underscore World')).to.equal('Hello%20%20World');
+    });
+
+    it("should return without hashtag with dash", function () {
+      expect(tweetToQuery.encode('Hello #fail-with-dash World')).to.equal('Hello%20%20World');
+    });
+
+    it("should return without hashtag with upper case", function () {
+      expect(tweetToQuery.encode('Hello #FAIL World')).to.equal('Hello%20%20World');
     });
   });
 
