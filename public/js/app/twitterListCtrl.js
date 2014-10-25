@@ -1,6 +1,6 @@
 var app = angular.module('twitter-fm');
 
-app.controller('TwitterListCtlr', ['$scope', '$sce', 'io', function ($scope, $sce, io) {
+app.controller('TwitterListCtlr', ['$scope', '$sce', 'io', 'tweetToQuery', function ($scope, $sce, io, tweetToQuery) {
   var socket = io.connect(window.location.origin);
   $scope.text = '> waiting for tweets...';
 
@@ -9,18 +9,12 @@ app.controller('TwitterListCtlr', ['$scope', '$sce', 'io', function ($scope, $sc
     return $sce.trustAsUrl(url).$$unwrapTrustedValue();
   };
 
-  function queryString (tweet) {
-    var maxLength = 100;
-
-    var text = tweet.substring(0, maxLength);
-    return encodeURIComponent(text);
-  }
-
   socket.on('tweet', function (data) {
     $scope.$apply(function () {
       $scope.text = '> ' + data.text;
 
-      $scope.spokenWordUri = textToSpeechUrl(queryString(data.text));
+      var queryString = tweetToQuery.encode(data.text);
+      $scope.spokenWordUri = textToSpeechUrl(queryString);
     });
   });
 }]);
