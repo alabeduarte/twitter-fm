@@ -12,8 +12,8 @@ describe('TweetToQuery', function () {
   });
 
   describe("when tweet has hashtag", function () {
-    it("should encode string", function () {
-      expect(tweetToQuery.encode('Hello World #fail')).to.equal('Hello%20World%20%23fail');
+    it("should return without hashtag", function () {
+      expect(tweetToQuery.encode('Hello #fail World')).to.equal('Hello%20%20World');
     });
   });
 

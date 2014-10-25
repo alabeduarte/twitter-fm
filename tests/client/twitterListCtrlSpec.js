@@ -82,8 +82,8 @@ describe('TwitterListCtlr', function() {
         });
       }));
 
-      it("should encode properly the spoken word url", function() {
-        var encodedURI = url + 'Hello%20World%20%23fail';
+      it("should encode spoken word url without hashtag", function() {
+        var encodedURI = url + 'Hello%20World%20';
 
         expect(scope.spokenWordUri).to.equal(encodedURI);
       });
