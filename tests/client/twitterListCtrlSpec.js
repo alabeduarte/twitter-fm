@@ -14,7 +14,6 @@ describe('TwitterListCtlr', function() {
             }
           }
         },
-        tweetToQuery: new TweetToQuery(),
       });
     }));
 
@@ -36,7 +35,6 @@ describe('TwitterListCtlr', function() {
             }
           }
         },
-        tweetToQuery: new TweetToQuery(),
       });
     }));
 
@@ -62,7 +60,6 @@ describe('TwitterListCtlr', function() {
         $controller('TwitterListCtlr', {
           $scope: scope,
           io: { connect: function (url) { return tweetEvent; } },
-          tweetToQuery: new TweetToQuery(),
         });
       }));
 
@@ -82,7 +79,6 @@ describe('TwitterListCtlr', function() {
         $controller('TwitterListCtlr', {
           $scope: scope,
           io: { connect: function (url) { return tweetEvent; } },
-          tweetToQuery: new TweetToQuery(),
         });
       }));
 
@@ -110,7 +106,6 @@ describe('TwitterListCtlr', function() {
         $controller('TwitterListCtlr', {
           $scope: scope,
           io: { connect: function (url) { return tweetEvent; } },
-          tweetToQuery: new TweetToQuery(),
         });
       }));
 
