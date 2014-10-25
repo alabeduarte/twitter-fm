@@ -45,11 +45,14 @@ describe('TwitterListCtlr', function() {
 
   describe("when some tweet arrived from server", function() {
     var url = 'http://translate.google.com/translate_tts?tl=en-us&q=';
+    var tweet = function (message) {
+      return {
+        on: function (key, callback) { callback({ text: message }); }
+      }
+    };
 
     describe("when tweet is a simple string", function() {
-      var tweetEvent = {
-        on: function (key, callback) { callback({ text: 'Hello World' }); }
-      };
+      var tweetEvent = tweet('Hello World');
 
       beforeEach(angular.mock.inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
@@ -68,9 +71,7 @@ describe('TwitterListCtlr', function() {
     });
 
     describe("when tweet has hashtag", function() {
-      var tweetEvent = {
-        on: function (key, callback) { callback({ text: 'Hello World #fail' }); }
-      };
+      var tweetEvent = tweet('Hello World #fail');
 
       beforeEach(angular.mock.inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
@@ -98,9 +99,7 @@ describe('TwitterListCtlr', function() {
         for(i=1;i<=totalLength;i++) { text += '*'; };
         moreThan100Characters = text;
 
-        var tweetEvent = {
-          on: function (key, callback) { callback({ text: moreThan100Characters }); }
-        };
+        var tweetEvent = tweet(moreThan100Characters);
 
         scope = $rootScope.$new();
 
