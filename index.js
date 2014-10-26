@@ -19,8 +19,6 @@ var server = app.listen(app.get('port'), function () {
 var io = require('socket.io').listen(server);
 
 twitter.onTweet(function (tweet) {
-  var data = { text: tweet.text };
-  console.log(">", data.text);
-
-  io.sockets.emit('tweet', data);
+  console.log(">", '(', tweet.lang, ')', tweet.text);
+  io.sockets.emit('tweet-' + tweet.lang, { text: tweet.text, lang: tweet.lang });
 });

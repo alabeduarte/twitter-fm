@@ -44,7 +44,7 @@ describe('TwitterListCtlr', function() {
   });
 
   describe("when some tweet arrived from server", function() {
-    var url = 'http://translate.google.com/translate_tts?tl=en-us&q=';
+    var url = 'http://translate.google.com/translate_tts?tl=en&q=';
     var tweet = function (message) {
       return {
         on: function (key, callback) { callback({ text: message }); }
