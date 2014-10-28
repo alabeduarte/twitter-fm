@@ -4,6 +4,8 @@ app.controller('TwitterListCtlr', ['$scope', '$sce', 'io', 'tweetToQuery', funct
   var socket = io.connect(window.location.origin);
   $scope.text = '> waiting for tweets...';
 
+  $scope.shareMessage = 'Testing%20Tweet%20TTS%20from%20' + window.location.origin;
+
   function textToSpeechUrl (q, language) {
     var url = 'http://translate.google.com/translate_tts?tl=' + language + '&q=' + q;
     return $sce.trustAsUrl(url).$$unwrapTrustedValue();
