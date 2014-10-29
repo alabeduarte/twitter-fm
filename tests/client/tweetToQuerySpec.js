@@ -33,7 +33,17 @@ describe('TweetToQuery', function () {
     it('should return without url', function () {
       expect(tweetToQuery.encode('Hello http://t.co/a5UUGPVlWl World')).to.equal('Hello%20%20World');
     });
-  })
+  });
+
+  describe('when tweet is a RT (retweet)', function () {
+    it('should return without RT when begins with RT', function () {
+      expect(tweetToQuery.encode('RT Hello World')).to.equal('Hello%20World');
+    });
+
+    it('should return keep RT when do not begins with RT', function () {
+      expect(tweetToQuery.encode('Hello RT World')).to.equal('Hello%20RT%20World');
+    });
+  });
 
   describe("when tweet has more than 100 characters", function () {
     var moreThan100Characters;
