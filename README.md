@@ -4,6 +4,12 @@
 
 Uses google text to speech tweets, see => http://twitter-fm.herokuapp.com
 
+##Setup
+
+```
+  npm install
+```
+
 ##Running it
 
 ```
