@@ -12,6 +12,9 @@ Uses google text to speech for my tweets, see => http://twitter-fm.herokuapp.com
 
 ##Running it
 
+Take a look at the `.env_example` file. You need to have all twitter developer
+keys
+
 ```
   npm start
 ```
