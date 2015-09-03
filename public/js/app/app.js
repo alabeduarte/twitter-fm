@@ -1,6 +1,6 @@
 angular.module('twitter-fm', ['socket.io', 'tweetToQuery'])
   .config(['$sceDelegateProvider', function ($sceDelegateProvider) {
-    $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://*.google.com/**']);
+    $sceDelegateProvider.resourceUrlWhitelist(['self', 'https://*.google.com/**']);
   }]);
 
 angular.module('socket.io', []).factory('io', function() {
